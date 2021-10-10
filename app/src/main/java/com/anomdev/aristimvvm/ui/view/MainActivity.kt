@@ -1,11 +1,12 @@
-package com.anomdev.aristimvvm.view
+package com.anomdev.aristimvvm.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.anomdev.aristimvvm.databinding.ActivityMainBinding
-import com.anomdev.aristimvvm.viewmodel.QuoteViewModel
+import com.anomdev.aristimvvm.ui.viewmodel.QuoteViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,9 +21,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        quoteViewModel.onCreate()
+
         quoteViewModel.quoteModel.observe(this, Observer { currentQuote ->
             binding.tvQuote.text = currentQuote.quote
             binding.tvAuthor.text = currentQuote.author
+        })
+
+        //Aquí hacemos que se muestre la progressbar o no en funcion de lo que nos llegue de QuoteViewModel
+        quoteViewModel.isLoading.observe(this, Observer {
+            binding.progress.isVisible = it
         })
 
         binding.viewContainer.setOnClickListener{

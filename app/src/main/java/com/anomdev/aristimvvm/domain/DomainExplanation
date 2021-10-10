@@ -1,0 +1,4 @@
+DOMAIN:
+
+Esto contendrá la lógica de negocio, la cual no cambiará nunca. Es decir, lo que aquí pongamos será lo que funcione igual (en su lenguaje correspondiente) tanto en Android como en iOS, por ejemplo.
+Aquí vendrán casos de uso (o interactor) que realicen una única acción: por ejemplo, existirá un caso de uso para traernos todas las citas, otro caso de uso para que nos muestre una cita random, etc.

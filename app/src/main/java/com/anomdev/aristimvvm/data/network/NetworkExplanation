@@ -1,0 +1,3 @@
+NETWORK:
+
+Como en este caso vamos a obtener las citas y autores mediante un endpoint de una API de internet, llamaremos a la carpeta "network" (red)
