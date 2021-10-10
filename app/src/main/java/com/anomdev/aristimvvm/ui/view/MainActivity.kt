@@ -7,7 +7,10 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.anomdev.aristimvvm.databinding.ActivityMainBinding
 import com.anomdev.aristimvvm.ui.viewmodel.QuoteViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+//Con esta etiqueta configuramos la Activity para que pueda inyectar una dependencia (es decir, que reciba una dependencia).
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     //Preparamos el binding para que coja las vistas del XML desde código
